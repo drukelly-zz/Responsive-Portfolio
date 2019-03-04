@@ -108,13 +108,27 @@ nav {
 }
 
 /* Portfolio */
+.portfolio-items {
+  align-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .portfolio-items a {
   display: block;
-  float: left;
-  margin: 0 2em 2em 0;
+  margin-bottom: 10px;
   position: relative;
   text-decoration: none;
-  width: 30%;
+  transition: opacity 0.3s ease-in-out;
+  width: 278px;
+}
+.portfolio-items a:active,
+.portfolio-items a:hover {
+  opacity: .67;
+}
+
+.portfolio-items a:nth-child(odd) {
+  margin-right: 20px;
 }
 
 .portfolio-items img {
@@ -152,6 +166,7 @@ fieldset {
 input[type="text"],
 input[type="email"],
 textarea {
+  border: 1px solid var(--gray);
   padding: .25em .5em;
   width: 98%;
 }
@@ -203,8 +218,12 @@ footer {
   .content-container {
     width: 100%;
   }
+  .portfolio-items a {
+    width: 321px
+  }
 }
 
+/* Mobile */
 @media screen and (max-width: 640px) {
   header > div {
     flex-direction: column;
@@ -227,5 +246,9 @@ footer {
   figure {
     float: none;
     margin: 0;
+  }
+  .portfolio-items a,
+  .portfolio-items a:nth-child(odd) {
+    margin-right: 0;
   }
 }
